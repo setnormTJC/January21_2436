@@ -1,34 +1,28 @@
 // January21_2025.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
 
-#include<vector> 
+#include"mySpecialHeader.h"
 
-using std::cout, std::vector, std::string;
+//class LinkedList
+//{
+//    //later
+//};
+
 
 int main()
 {
-    vector<vector<string>> myRoom =
-    {
-        // front row of my room:
-        {"Chair", "Table", "Lamp", "Bookshelf"},
-        {"Bed", "Wardrobe", "Desk", "Laptop"},
-        {"Rug", "Plant", "Clock", "Mirror"},
-        {"Sofa", "TV", "Coffee Table", "Painting", "Jagged element"}
-    };
+    auto myRoom = initializeContentsOf2DRoom();
 
-    for (const auto& row : myRoom) //& is pass by reference
-    {
-        for (const auto& element : row)
-        {
-            cout << element << " ";
-        }
-        cout << "\n";
-    }
+    //print(myRoom);
+    string thingIAmLookingFor = "myCar";
 
-    cout << "Is it desk?\t\a" << myRoom.at(1).at(2) << "\n";
+    std::pair<int, int> locationIn2DArray = doSayreSequentialSearch(myRoom, thingIAmLookingFor); 
+    cout << thingIAmLookingFor << "was? found at row = " << locationIn2DArray.first
+        << " and column = " << locationIn2DArray.second << "\n";
 
-    cout << "Is it jagged element?\t\a" << myRoom.back().back() << "\n";
+    //cout << "Is it desk?\t\a" << myRoom.at(1).at(2) << "\n";
+
+    //cout << "Is it jagged element?\t\a" << myRoom.back().back() << "\n";
 
 }
