@@ -32,16 +32,6 @@ pair<int, int> doSayreSequentialSearch(vector<vector<string>> twoDArrayOfStrings
 {
     pair<int, int> locationIn2DArray;
 
-    for (int currentColumn = 0; currentColumn < twoDArrayOfStrings.size(); ++currentColumn)
-    {
-        vector<string> currentRow = twoDArrayOfStrings.at(currentColumn); 
-        for (int row = 0; row < currentRow.size(); ++row)
-        {
-            cout << currentRow.at(row) << " ";
-        }
-        cout << "\n";
-    }
-
     for (int row = 0; row < twoDArrayOfStrings.size(); ++row)
     {
         for (int col = 0; col < twoDArrayOfStrings.at(row).size(); ++col)
@@ -58,7 +48,6 @@ pair<int, int> doSayreSequentialSearch(vector<vector<string>> twoDArrayOfStrings
     locationIn2DArray = { -1, -1 };
     return locationIn2DArray;
 
-    //return 
 }
 
 template<typename T> 
